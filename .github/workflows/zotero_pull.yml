@@ -37,7 +37,7 @@ jobs:
       
       - name: Install pandoc
         run: |
-          sudo apt-get install pandoc=2.9       
+          sudo apt-get install pandoc       
 
       - name: Install dependencies
         run: |
