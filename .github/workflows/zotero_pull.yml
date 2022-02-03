@@ -52,5 +52,5 @@ jobs:
       # Runs a single command using the runners shell
       - name: Zotero pull
         run: |
-          python zotero_pull.py
+          pipenv run python zotero_pull.py
 
