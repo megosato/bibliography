@@ -38,8 +38,9 @@ jobs:
       - name: Install dependencies
         run: |
           pip install pyzotero
-          pip install manubot
-          pip install pandoc
+          pip install --upgrade manubot
+          pip install pandoc==2.9
+          pip install panflute==1.12.5
           
       #- name: Install pipenv
       #  run: |
