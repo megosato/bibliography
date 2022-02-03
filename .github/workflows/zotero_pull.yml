@@ -77,4 +77,4 @@ jobs:
           destination_folder: '.'
           user_email: 'osatom@uci.edu'
           user_name: 'megosato'
-          commit_message: 'Update references'
+          commit_message: 'Update references 2'
