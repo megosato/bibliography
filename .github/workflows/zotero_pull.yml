@@ -37,7 +37,9 @@ jobs:
       
       - name: Install pandoc
         run: |
-          sudo apt-get install pandoc       
+          sudo apt-get update
+          sudo apt-get install pandoc      
+          sudo apt-get install pandoc-citeproc
 
       - name: Install dependencies
         run: |
