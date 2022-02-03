@@ -39,6 +39,7 @@ jobs:
         run: |
           pip install pyzotero
           pip install manubot
+          pip install pandoc
           
       #- name: Install pipenv
       #  run: |
