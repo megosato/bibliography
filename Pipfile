@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 pyzotero = "*"
 manubot = "*"
+pandoc = "*"
 
 [requires]
 python_version = "3.8"
