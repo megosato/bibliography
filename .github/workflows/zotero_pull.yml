@@ -69,8 +69,8 @@ jobs:
         run: |
           python zotero_pull.py \
             -t test \
-            --lib-id ${{ secrets.ZOTERO_LIBRARY_ID }} \
-            --api-key  ${{ secrets.ZOTERO_API_KEY }} \
+            --lib-id secrets.ZOTERO_LIBRARY_ID \
+            --api-key secrets.ZOTERO_API_KEY \
             --outfile "ref.md" \
             --outfile-header "References"
             
