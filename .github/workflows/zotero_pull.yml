@@ -81,7 +81,7 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source_file: 'test.md'
+          source_file: 'ref.md'
           destination_repo: 'megosato/bibliography'
           destination_folder: '.'
           user_email: 'osatom@uci.edu'
