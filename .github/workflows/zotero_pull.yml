@@ -1,14 +1,14 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: GatherReferences
 
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
-  #push:
-  #  branches: [ main ]
-  #pull_request:
-  #  branches: [ main ]
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
   schedule:
     - cron: '0 */6 * * *'
 
@@ -62,7 +62,7 @@ jobs:
       #  run: |
       #    pipenv install --dev --deploy
 
-      # Runs a single command using the runners shell
+      # Run the python script to pull all references from Zotero with tag
       - name: Zotero pull
         env:
           ZOTERO_LIBRARY_ID: ${{ secrets.ZOTERO_LIBRARY_ID }}
@@ -72,19 +72,18 @@ jobs:
             -t test \
             --lib-id "$ZOTERO_LIBRARY_ID" \
             --api-key "$ZOTERO_API_KEY" \
-            --outfile "ref.md" \
+            --outfile "References.md" \
             --outfile-header "References"
             
-
-
-      - name: Pushes test file
+      # Commit the created reference file to the Master branch
+      - name: Commit references file
         uses: dmnemec/copy_file_to_another_repo_action@main
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source_file: 'ref.md'
+          source_file: 'References.md'
           destination_repo: 'megosato/bibliography'
           destination_folder: '.'
           user_email: 'osatom@uci.edu'
           user_name: 'megosato'
-          commit_message: 'Update references 2'
+          commit_message: 'Update references file'
