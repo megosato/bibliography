@@ -69,7 +69,7 @@ jobs:
           ZOTERO_LIBRARY_ID: ${{ secrets.ZOTERO_LIBRARY_ID }}
           ZOTERO_API_KEY: ${{ secrets.ZOTERO_API_KEY }}
         run: |
-          python zotero_pull.py \
+          pipenv run python zotero_pull.py \
             -t test \
             --lib-id "$ZOTERO_LIBRARY_ID" \
             --api-key "$ZOTERO_API_KEY" \
