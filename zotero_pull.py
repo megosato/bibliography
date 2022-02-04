@@ -37,6 +37,9 @@ if __name__ == "__main__":
 
     args = vars(ap.parse_args())
     
+    print("id", args["lib_id"])
+    print("key", args["api_key"])
+    
 
     # From https://www.zotero.org/settings/keys
     #library_id = "5818567"
